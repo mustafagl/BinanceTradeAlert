@@ -1,0 +1,29 @@
+
+.search_form{
+
+    display: inline-block;
+    border: 1px solid black;
+    padding: 6px;
+    border-radius: 2em;
+    background-color: #07284ccb;
+
+}
+.search_form label{
+
+    color: white;
+}
+
+.search_form button{
+
+    background-color: #847a7a;
+    border: none;
+    border-radius: 0.5em;
+    padding: auto;
+}
+
+.search_form input[type=date]{
+
+    background-color: #005fff40;
+    color: #fff;
+    
+}

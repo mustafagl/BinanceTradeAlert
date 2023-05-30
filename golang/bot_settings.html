@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bot Settings</title>
+
+<link rel="shortcut icon" type="image/png" href="/images/whale.png"/>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/left_menu.css">
+
+<link href='css/alarm.css' rel='stylesheet'>
+<link href='css/home-alt.css' rel='stylesheet'>
+<link href='css/bot.css' rel='stylesheet'>
+
+</head>
+
+
+
+<body>
+    <h1 style=>Ocean's Four</h1>
+
+    <div class="leftmenu">
+        <h3>Ocean's Four</h3>
+        <ul>
+            <li>
+
+                <a href="../" >
+                    <i style="color: #7ebdff;display: inline-block;margin-right: 1vw;" class="gg-home-alt"> </i>
+
+                    <span  >Home</span>
+                </a>
+        
+            </li>
+            <li>
+                <a href="./Alerts" >
+                    <i style="color: #ff7e7e;display: inline-block;margin-right: 1vw;" class="gg-alarm"> </i>
+                    <span >Alerts</span>
+                </a>
+        
+            </li>
+
+            <li>
+                <a href="./BotSettings" >
+                    <i style="color: #af8dd1;display: inline-block;margin-right: 1vw;" class="gg-bot"> </i>
+                    <span >Bot Settings</span>
+                </a>
+        
+            </li>
+
+
+        </ul>  
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="post">
+        <h2 style="height: 10%; width: auto;text-align: left;   margin: auto; ">Bot Settings: </h2>
+
+ 
+        
+    
+       <form method="post" class="bot_settings">
+            {{range .Settings}}
+ 
+            <ul>
+
+                <li>
+                    <label for="stop">Stop (%): </label>
+                    <input type="number" name="stop" min="0" value="{{ .Stop }}" step="0.01">
+                </li>
+
+                <li>
+                    <label for="p_stop1_t">Profit Stop Tigger 1 (%): </label>
+                    <input type="number" name="p_stop1_t" value="{{ .P_stop1_t }}" min="0" step="0.01">
+                </li>
+
+                <li>
+                    <label for="p_stop1">Profit Stop 1 (%): </label>
+                    <input type="number" name="p_stop1" value="{{ .P_stop1 }}" min="0" step="0.01">
+                </li>
+
+                <li>
+                    <label for="p_stop2_t">Profit Stop Tigger 2 (%): </label>
+                    <input type="number" name="p_stop2_t" value="{{ .P_stop2_t }}" min="0" step="0.01">
+                </li>
+
+                <li>
+                    <label for="p_stop2">Profit Stop 2 (%): </label>
+                    <input type="number" name="p_stop2" value="{{ .P_stop2 }}" min="0" step="0.01">
+                </li>
+
+                <li>
+                    <label for="p_stop3_t">Profit Stop Tigger 3 (%): </label>
+                    <input type="number" name="p_stop3_t" value="{{ .P_stop3_t }}" min="0" step="0.01">
+                </li>
+
+                <li>
+                    <label for="p_stop3">Profit Stop 3 (%): </label>
+                    <input type="number" name="p_stop3" value="{{ .P_stop3 }}" min="0" step="0.01">
+                </li>
+
+                <li>
+                    <label for="p_stop4_t">Profit Stop Tigger 4 (%): </label>
+                    <input type="number" name="p_stop4_t" value="{{ .P_stop4_t }}" min="0" step="0.01">
+                </li>
+
+                <li>
+                    <label for="p_stop4">Profit Stop 4 (%): </label>
+                    <input type="number" name="p_stop4" value="{{ .P_stop4 }}" min="0" step="0.01">
+                </li>
+
+                <li>
+                    <label for="take_profit">Take Profit (%): </label>
+                    <input type="number" name="take_profit" value="{{ .Take_profit }}" min="0" step="0.01">
+                </li>
+
+
+            </ul>
+            {{end}}
+            
+            <button type="submit"style="padding: 5px;">Kaydet</button>
+        </form>
+    </div>
+
+    </div>
+
+
+    <footer>
+        <p>Author: Ocean's Four<br>
+        
+      </footer>
+
+</body>
+</html>
+
+<script>
+    if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>

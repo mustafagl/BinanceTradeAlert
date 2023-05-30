@@ -1,0 +1,49 @@
+.leftmenu{
+
+    background: linear-gradient(150deg, #021f2a 0%, #2e547e 51%, #16303b 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    border-right: 5px solid;
+
+}
+.leftmenu ul{
+
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.leftmenu li{
+    /*background-color: #8c90a370;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+
+}
+
+.leftmenu a{
+    color: #79ffff;
+    border-radius: 25px;
+    border: 2px solid #157680;
+    padding: 10px;
+    background-color: #2e547e;
+    text-decoration: none; 
+}
+
+.leftmenu a:hover{
+    color: rgb(0, 0, 0);
+    background-color: aliceblue;
+    text-decoration: none; 
+}
+
+.leftmenu h3{
+
+    color: white;
+}

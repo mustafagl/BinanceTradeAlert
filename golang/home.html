@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+
+<link rel="shortcut icon" type="image/png" href="/images/whale.png"/>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/left_menu.css">
+<link rel="stylesheet" href="css/search_content.css">
+
+
+<link href='css/alarm.css' rel='stylesheet'>
+<link href='css/home-alt.css' rel='stylesheet'>
+<link href='css/search.css' rel='stylesheet'>
+<link href='css/bot.css' rel='stylesheet'>
+
+ 
+</head>
+<body>
+    <h1 style=>Ocean's Four</h1>
+
+    <div class="leftmenu">
+        <h3>Ocean's Four</h3>
+        <ul>
+            <li>
+
+                <a href="../" >
+                    <i style="color: #7ebdff;display: inline-block;margin-right: 1vw;" class="gg-home-alt"> </i>
+
+                    <span  >Home</span>
+                </a>
+        
+            </li>
+            <li>
+                <a href="./Alerts" >
+                    <i style="color: #ff7e7e;display: inline-block;margin-right: 1vw;" class="gg-alarm"> </i>
+                    <span >Alerts</span>
+                </a>
+        
+            </li>
+
+            <li>
+                <a href="./BotSettings" >
+                    <i style="color: #af8dd1;display: inline-block;margin-right: 1vw;" class="gg-bot"> </i>
+                    <span >Bot Settings</span>
+                </a>
+        
+            </li>
+
+        </ul>  
+
+
+    </div>
+
+
+        <h3>Total Profit (%): {{.TotalProfit}}</h3> 
+        <div class="post">
+
+            <form  class="search_form" action="." method="get">
+                <label for="start_date">Search Between </label>
+                <input type="date" id="start_date" name="start_date">
+                <label for="end_date"> and </label>
+                <input type="date" id="end_date" name="end_date">
+                <button type="submit"style="padding: 5px;">
+                <i  style="color: #fff;" class="gg-search"> </i>
+                
+            </button>
+
+            </form> 
+            <br>
+            <br>
+
+
+
+            <h2 >Closed Trades: </h2>
+
+            <table>
+                <thead>
+                    <tr>
+                    <th>Open Time</th>
+                    <th>Close Time</th>
+                    <th>Entry Price</th>
+                    <th>Profit %</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {{range .Closed}}
+                <tr>
+                <td>{{ .Open_time }}</td>
+                <td>{{ .Close_time }}</td>
+                <td>{{ .Entry_price }}</td>
+                <td>{{ .Profit }}</td>
+                </tr>{{end}}>
+
+            </table>
+        </div>
+
+        <div class="post">
+            <h2>Open Trades: </h2>
+
+            <table>
+                <thead>
+                    <tr>
+                    <th>Open Time</th>
+                    <th>Entry Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {{range .Open}}
+                <tr>
+                <td>{{ .Open_time }}</td>
+                <td>{{ .Entry_price }}</td>
+                </tr>{{end}}
+
+            </table>
+        </div>
+        <footer>
+            <p>Author: Ocean's Four<br>
+            
+        </footer>
+</body>
+</html>

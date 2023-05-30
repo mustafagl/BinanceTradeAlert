@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alerts</title>
+
+<link rel="shortcut icon" type="image/png" href="/images/whale.png"/>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/left_menu.css">
+
+<link href='css/alarm.css' rel='stylesheet'>
+<link href='css/home-alt.css' rel='stylesheet'>
+<link href='css/bot.css' rel='stylesheet'>
+
+</head>
+
+
+
+<body>
+    <h1 style=>Ocean's Four</h1>
+
+    <div class="leftmenu">
+        <h3>Ocean's Four</h3>
+        <ul>
+            <li>
+
+                <a href="../" >
+                    <i style="color: #7ebdff;display: inline-block;margin-right: 1vw;" class="gg-home-alt"> </i>
+
+                    <span  >Home</span>
+                </a>
+        
+            </li>
+            <li>
+                <a href="./Alerts" >
+                    <i style="color: #ff7e7e;display: inline-block;margin-right: 1vw;" class="gg-alarm"> </i>
+                    <span >Alerts</span>
+                </a>
+        
+            </li>
+
+            <li>
+                <a href="./BotSettings" >
+                    <i style="color: #af8dd1;display: inline-block;margin-right: 1vw;" class="gg-bot"> </i>
+                    <span >Bot Settings</span>
+                </a>
+        
+            </li>
+
+
+        </ul>  
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="post">
+        <h2 style="height: 10%; width: auto;text-align: left;   margin: auto; ">My Whale Alerts: 
+        </h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Creation Time</th>
+                    <th>Order Type</th>
+                    <th>Symbol</th>
+                    <th>Amount</th>
+                    <th>Group Size</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {{range .Whale_alert}}   
+            <tr>
+            <td>{{.ID}}</td>
+            <td>{{.Creation_time}}</td>
+            <td>{{.Order_type}}</td>
+            <td>{{.Symbol}}</td>
+            <td>{{.Amount}}</td>
+            <td>{{.Group_size}}</td>
+
+            <td>
+                <form action="" method="post" id="myForm">
+                    <button name= "delete_whale" value="{{.ID}}" type="submit" >Sil</button>
+                </form>
+            </td>
+            </tr>
+            {{end}}
+      
+
+        </table>
+    <div>
+        <a> if </a>
+        <form action="" method="post" id="myForm">
+            <select name="symbol_whale">
+                <option value="BTCUSDT">BTCUSDT</option>
+                <option value="ETHUSDT">ETHUSDT</option>
+                <option value="AVAXUSDT">AVAXUSDT</option>
+                <option value="XRPUSDT">XRPUSDT</option>
+                <option value="TRXUSDT">TRXUSDT</option>
+                <option value="BNBUSDT">BNBUSDT</option>
+                <option value="DOGEUSDT">DOGEUSDT</option>
+
+              </select>
+            <select name="whale_order_type">
+                <option value="buy">BUY</option>
+                <option value="sell">SELL</option>
+              </select>
+              <a> amount </a>
+            <input type="number" name="whale_amount" step="0.01">
+            <a> group size </a>
+            <input type="number" name="whale_group_size" step="1">
+            <button  type="submit" >Ekle</button>
+        </form>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="post">
+        <h2 style="height: 10%; width: auto;text-align: left;   margin: auto; ">My Price Alerts: 
+        </h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Creation Time</th>
+                    <th>Direction</th>
+                    <th>Trigger Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {{range .Alert}}   
+            <tr>
+            <td>{{ .ID }}</td>
+            <td>{{ .Creation_time }}</td>
+            <td>{{ .Direction }}</td>
+            <td>{{ .Trigger_price }}</td>
+
+            <td>
+                <form action="" method="post" id="myForm">
+                    <button name= "delete" value="{{ .ID }}" type="submit" >Sil</button>
+                </form>
+            </td>
+            </tr>
+            {{end}}
+      
+
+        </table>
+    <div>
+        <a> if </a>
+        <form action="" method="post" id="myForm">
+            <select name="direction">
+                <option value="greater">Greater</option>
+                <option value="lower">Lower</option>
+
+              </select>
+              <a> than </a>
+            <input type="number" name="trig_price" step="0.01">
+            <button  type="submit" >Ekle</button>
+        </form>
+    </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+    <div class="post">
+        <h2 style="height: 10%; width: auto;text-align: left;   margin: auto; ">My Percent Change Alerts: 
+        </h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Creation Time</th>
+                    <th>Symbol</th>
+                    <th>Direction</th>
+                    <th>Percent</th>
+                    <th>Last Trigger Time</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {{range .Perc_alert}}   
+            <tr>
+            <td>{{.ID}}</td>
+            <td>{{.Creation_time}}</td>
+            <td>{{.Symbol}}</td>
+            <td>{{.Direction}}</td>
+            <td>{{.Perc}}</td>
+            <td>{{.Last_trig_time}}</td>
+
+            <td>
+                <form action="" method="post" id="myForm">
+                    <button name= "delete_perc" value="{{.ID}}" type="submit" >Sil</button>
+                </form>
+            </td>
+            </tr>
+            {{end}}
+      
+
+        </table>
+    <div>
+        <a> if </a>
+        <form action="" method="post" id="myForm">
+            <select name="symbol">
+                <option value="BTCUSDT">BTCUSDT</option>
+                <option value="ETHUSDT">ETHUSDT</option>
+                <option value="AVAXUSDT">AVAXUSDT</option>
+                <option value="XRPUSDT">XRPUSDT</option>
+                <option value="TRXUSDT">TRXUSDT</option>
+                <option value="BNBUSDT">BNBUSDT</option>
+                <option value="DOGEUSDT">DOGEUSDT</option>
+
+              </select>
+            <select name="direction_perc">
+                <option value="increase">increase</option>
+                <option value="decrease">decrease</option>
+              </select>
+              <a> (%) </a>
+            <input type="number" name="perc" step="0.01">
+            <button  type="submit" >Ekle</button>
+        </form>
+    </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <p>Author: Ocean's Four<br>
+        
+      </footer>
+
+</body>
+</html>
+
+<script>
+    if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
